@@ -1,6 +1,6 @@
-# if-plugin-template
+# if-prometheus-exporter
 
-`if-plugin-template` is an environmental impact calculator template which exposes an API for [IF](https://github.com/Green-Software-Foundation/if) to retrieve energy and embodied carbon estimates.
+`if-prometheus-exporter` is an environmental impact calculator template which exposes an API for [IF](https://github.com/Green-Software-Foundation/if) to retrieve energy and embodied carbon estimates.
 
 ## Implementation
 

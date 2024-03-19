@@ -1,15 +1,15 @@
 {
-  "name": "if-plugin-template",
-  "description": "Impact Framework plugins template.",
+  "name": "if-prometheus-exporter",
+  "description": "Impact Framework Prometheus Exporter",
   "version": "v0.1.0",
   "author": {
-    "name": "Green Software Foundation",
-    "email": "info@gsf.com"
+    "name": "Code Green"
   },
   "bugs": {
-    "url": "https://github.com/Green-Software-Foundation/if-plugin-template/issues/new?assignees=&labels=feedback&projects=&template=feedback.md&title=Feedback+-+"
+    "url": "https://github.com/nb-green-ops/if-prometheus-exporter/issues/new?assignees=&labels=feedback&projects=&template=feedback.md&title=Feedback+-+"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "^18.6.0",
     "@jest/globals": "^29.6.1",
     "@types/jest": "^29.5.7",
-    "@types/node": "^20.4.5",
+    "@types/node": "^20.11.29",
     "fixpack": "^4.0.0",
     "gts": "^5.0.0",
     "husky": "^8.0.0",
@@ -31,12 +31,11 @@
     "node": ">=18",
     "npm": ">=8"
   },
-  "homepage": "https://greensoftware.foundation",
   "keywords": [],
   "license": "MIT",
   "main": "build/index.js",
   "repository": {
-    "url": "https://github.com/Green-Software-Foundation/if-plugin-template.git"
+    "url": "https://github.com/nb-green-ops/if-prometheus-exporter.git"
   },
   "scripts": {
     "build": "npm run clean && tsc --project tsconfig.build.json",

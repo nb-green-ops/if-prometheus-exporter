@@ -21,10 +21,10 @@ export const PrometheusExporter = (
     let outputStr = '';
 
     inputs.map(input => {
-      console.log('input');
-      console.log(input);
+      // console.log('input');
+      // console.log(input);
 
-      console.log(mergedConfig['output-metric-labels']);
+      // console.log(mergedConfig['output-metric-labels']);
 
       const labels: {[x: string]: any}[] = [];
       mergedConfig['output-metric-labels'].forEach((label: string | number) => {
@@ -34,8 +34,8 @@ export const PrometheusExporter = (
         labels.push(obj);
       });
 
-      console.log('labels');
-      console.log(labels);
+      // console.log('labels');
+      // console.log(labels);
 
       const metrics: {[x: string]: any}[] = [];
       mergedConfig['output-metrics'].forEach((metric: string | number) => {
@@ -45,11 +45,11 @@ export const PrometheusExporter = (
         metrics.push(obj);
       });
 
-      console.log('metrics');
-      console.log(metrics);
+      // console.log('metrics');
+      // console.log(metrics);
 
       metrics.forEach((metric: any) => {
-        outputStr += guage(Object.keys(metric)[0], labels, metric);
+        outputStr += gauge(Object.keys(metric)[0], labels, metric);
       });
     });
 
@@ -76,15 +76,15 @@ export const PrometheusExporter = (
 // Current metric value
 // Optional metric timestamp
 
-function guage(key: any, labels: any, value: any) {
+function gauge(key: any, labels: any, value: any) {
   // # HELP go_goroutines Number of goroutines that currently exist.
   // # TYPE go_goroutines gauge
   // go_goroutines{method="post",code="400"} 73 1395066363000
 
-  const safeKey = dashify(key);
+  const safeKey = underscorify(key);
 
-  const helpStr = `# HELP if-${safeKey} is a gauge\n`;
-  const typeStr = `# TYPE if-${safeKey} gauge\n`;
+  const helpStr = `# HELP if_${safeKey} is a gauge\n`;
+  const typeStr = `# TYPE if_${safeKey} gauge\n`;
 
   let labelStr = '{';
   let index = 0;
@@ -98,11 +98,15 @@ function guage(key: any, labels: any, value: any) {
   });
   labelStr += '}';
 
-  const metricStr = `if-${safeKey}${labelStr} ${value[key]}\n`;
+  const metricStr = `if_${safeKey}${labelStr} ${value[key]}\n`;
 
   return helpStr + typeStr + metricStr;
 }
 
 function dashify(str: string) {
   return str.replace(/[^\w-]/gi, '-');
+}
+
+function underscorify(str: string) {
+  return str.replace(/[^\w_]/gi, '_');
 }

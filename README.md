@@ -8,7 +8,7 @@ Here can be implementation details of the plugin. For example which API is used,
 
 ## Usage
 
-To run the `<YOUR-CUSTOM-PLUGIN>`, an instance of `PluginInterface` must be created. Then, the plugin's `execute()` method can be called, passing required arguments to it.
+To run the `if-prometheus-exporter`, an instance of `PluginInterface` must be created. Then, the plugin's `execute()` method can be called, passing required arguments to it.
 
 This is how you could run the model in Typescript:
 

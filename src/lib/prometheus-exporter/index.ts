@@ -104,9 +104,9 @@ function gauge(key: any, labels: any, value: any) {
   return helpStr + typeStr + metricStr;
 }
 
-function dashify(str: string) {
-  return str.replace(/[^\w-]/gi, '-');
-}
+// function dashify(str: string) {
+//   return str.replace(/[^\w-]/gi, '-');
+// }
 
 function underscorify(str: string) {
   return str.replace(/[^\w_]/gi, '_');

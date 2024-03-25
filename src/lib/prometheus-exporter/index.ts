@@ -93,7 +93,8 @@ function gauge(key: any, labels: any, value: any) {
       labelStr += ',';
     }
     labelStr +=
-      dashify(Object.keys(label)[0]) + `="${label[Object.keys(label)[0]]}"`;
+      underscorify(Object.keys(label)[0]) +
+      `="${label[Object.keys(label)[0]]}"`;
     index += 1;
   });
   labelStr += '}';
